@@ -1,17 +1,19 @@
 package org.serpro;
 
+import java.util.Random;
 import java.util.Scanner;
 
 public class GradleTest {
     public static void main(String[] args) {
-        System.out.println("Jogo de advinhação!");
+        System.out.println("Jogo de Advinhação!");
         Scanner scanner = new Scanner(System.in);
         boolean jogarNovamente = true;
+        var numeroAleatorio = new Random();
         
         while (jogarNovamente) {
             System.out.println("Adivinhe o número entre 1 e 100.");
             int numeroTentativas = 3;
-            int numeroSecreto = (int) (Math.random() * 100) + 1;
+            int numeroSecreto = numeroAleatorio.nextInt(1,101);
             boolean acertou = false;
             
             while (numeroTentativas > 0 && !acertou) {
